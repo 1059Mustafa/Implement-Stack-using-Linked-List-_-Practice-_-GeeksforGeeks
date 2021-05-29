@@ -1,0 +1,22 @@
+///////// starting position se push pop hoga taki (!) me j=kaam ho
+
+
+
+void MyStack ::push(int x) 
+{
+    StackNode* temp=new StackNode(x);
+    temp->next=top;
+    top=temp;
+}
+
+//Function to remove an item from top of the stack.
+int MyStack ::pop() 
+{
+    if(!top) return -1;
+    StackNode* temp=top;
+    top=top->next;
+    int data=temp->data;
+    free(temp);
+    return data;
+
+}
